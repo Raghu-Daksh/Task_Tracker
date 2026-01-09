@@ -3,6 +3,8 @@ import uri from "../utils/uri";
 
 
 export default function TaskItem({ task, refresh }) {
+  console.log(task);
+  
 const toggleStatus = async () => {
   try {
     await fetch(`${uri}/api/tasks/${task._id}`, {
@@ -38,6 +40,8 @@ const deleteTask = async () => {
       <h4>{task.title}</h4>
       <p>{task.description}</p>
       <span>Priority: {task.priority}</span>
+      <span>Due Date: {new Date(task.dueDate).toLocaleDateString()
+}</span>
       <button onClick={toggleStatus}>{task.status}</button>
       <button onClick={deleteTask}>Delete</button>
     </div>

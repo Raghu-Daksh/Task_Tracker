@@ -185,15 +185,15 @@ form button {
 }
 
 form button:disabled {
+  border: 1px solid #a5b4fc;
   background: #a5b4fc;
   cursor: not-allowed;
 }
 
 form button:hover:not(:disabled) {
-    color: #100c62;
-    border: 1px solid #100c62;
-  
-  background: #fff;
+  color: #100c62;
+  border: 1px solid #100c62;
+  background: white;
 }
 
 
