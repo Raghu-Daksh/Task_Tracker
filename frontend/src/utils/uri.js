@@ -1,1 +1,3 @@
-export default uri = 'https://task-tracker-ctyd.onrender.com'
+const uri = 'https://task-tracker-ctyd.onrender.com';
+
+export default uri;
