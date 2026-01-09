@@ -4,6 +4,7 @@ import TaskList from "./components/TaskList";
 import FilterBar from "./components/FilterBar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import uri from "./utils/uri";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -16,7 +17,7 @@ function App() {
   const [showForm, setShowForm] = useState(false);
 
   const fetchTasks = async () => {
-    let url = `http://localhost:5000/api/tasks?`;
+    let url = `${uri}/api/tasks?`;
 
     if (filters.status) url += `status=${filters.status}&`;
     if (filters.priority) url += `priority=${filters.priority}&`;

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import uri from "../utils/uri";
 
 export default function TaskForm({ fetchTasks, closeForm }) {
   const [task, setTask] = useState({
@@ -15,7 +16,7 @@ export default function TaskForm({ fetchTasks, closeForm }) {
     e.preventDefault();
 
     try {
-      await fetch("http://localhost:5000/api/tasks", {
+      await fetch(`${uri}/api/tasks`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(task),

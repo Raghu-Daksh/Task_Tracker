@@ -1,10 +1,11 @@
 import { toast } from "react-toastify";
+import uri from "../utils/uri";
 
 
 export default function TaskItem({ task, refresh }) {
 const toggleStatus = async () => {
   try {
-    await fetch(`http://localhost:5000/api/tasks/${task._id}`, {
+    await fetch(`${uri}/api/tasks/${task._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -21,7 +22,7 @@ const toggleStatus = async () => {
 
 const deleteTask = async () => {
   try {
-    await fetch(`http://localhost:5000/api/tasks/${task._id}`, {
+    await fetch(`${uri}/api/tasks/${task._id}`, {
       method: "DELETE"
     });
 
