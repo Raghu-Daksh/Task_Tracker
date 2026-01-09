@@ -58,7 +58,7 @@ body {
 
 /* Add Task Button */
 .add-btn {
-  background: #4f46e5;
+  background: #100c62;
   color: white;
   border: none;
   padding: 10px 16px;
@@ -66,6 +66,8 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
+  border: 1px solid #100c62;
+  transition: 0.3s ease-in-out;
 }
 
 .add-btn i {
@@ -73,7 +75,9 @@ body {
 }
 
 .add-btn:hover {
-  background: #4338ca;
+  color: #100c62;
+  border: 1px solid #100c62;
+  background: white;
 }
 
 
@@ -167,7 +171,7 @@ form textarea {
 form button {
   grid-column: span 2;
   padding: 12px;
-  background: #4f46e5;
+  background: #100c62;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -177,7 +181,7 @@ form button {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #4f46e5;
+  border: 1px solid #100c62;
 }
 
 form button:disabled {
@@ -186,8 +190,8 @@ form button:disabled {
 }
 
 form button:hover:not(:disabled) {
-    color: #4f46e5;
-    border: 1px solid #4f46e5;
+    color: #100c62;
+    border: 1px solid #100c62;
   
   background: #fff;
 }
@@ -349,7 +353,7 @@ form button:hover:not(:disabled) {
   width: 40px;
   height: 40px;
   border: 4px solid #e5e7eb;
-  border-top: 4px solid #4f46e5;
+  border-top: 4px solid #100c62;
   border-radius: 50%;
   animation: spin 0.9s linear infinite;
 }
