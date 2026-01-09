@@ -9,6 +9,7 @@ export default function TaskForm({ fetchTasks, closeForm }) {
     priority: "Low",
     dueDate: "",
   });
+  const [loading, setLoading] = useState(false)
 
   const isValid = task.title && task.dueDate;
 
@@ -16,6 +17,7 @@ export default function TaskForm({ fetchTasks, closeForm }) {
     e.preventDefault();
 
     try {
+      setLoading(true)
       await fetch(`${uri}/api/tasks`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -25,8 +27,10 @@ export default function TaskForm({ fetchTasks, closeForm }) {
       toast.success("✅ Task added successfully");
       fetchTasks();
       closeForm(); // 👈 form close after success
+      setLoading(false);
     } catch {
       toast.error("❌ Failed to add task");
+      setLoading(false);
     }
   };
 
@@ -73,7 +77,7 @@ export default function TaskForm({ fetchTasks, closeForm }) {
           }
         />
 
-        <button disabled={!isValid}>Save Task</button>
+        <button disabled={!isValid}> {loading ? 'saving...' : 'Save Task'}</button>
       </form>
     </div>
   );

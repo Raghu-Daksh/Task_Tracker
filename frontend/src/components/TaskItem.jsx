@@ -13,10 +13,10 @@ const toggleStatus = async () => {
       })
     });
 
-    toast.success("✅ Task status updated");
+    toast.success("Task status updated");
     refresh();
   } catch {
-    toast.error("❌ Failed to update status");
+    toast.error("Failed to update status");
   }
 };
 
@@ -26,10 +26,10 @@ const deleteTask = async () => {
       method: "DELETE"
     });
 
-    toast.success("🗑️ Task deleted");
+    toast.success("Task deleted");
     refresh();
   } catch {
-    toast.error("❌ Failed to delete task");
+    toast.error("Failed to delete task");
   }
 };
 
@@ -39,7 +39,7 @@ const deleteTask = async () => {
       <p>{task.description}</p>
       <span>Priority: {task.priority}</span>
       <button onClick={toggleStatus}>{task.status}</button>
-      <button onClick={deleteTask}>❌</button>
+      <button onClick={deleteTask}>Delete</button>
     </div>
   );
 }
