@@ -35,50 +35,52 @@ export default function TaskForm({ fetchTasks, closeForm }) {
   };
 
   return (
-    <div className="task-form-card">
-      <div className="form-header">
-        <h3>Add New Task</h3>
-        <button className="close-btn" onClick={closeForm}>
-          ✖
-        </button>
-      </div>
+    <div className="task-form-container">
+        <div className="task-form-card">
+          <div className="form-header">
+            <h3>Add New Task</h3>
+            <button className="close-btn" onClick={closeForm}>
+              ✖
+            </button>
+          </div>
 
-      <form onSubmit={submit}>
-        <input
-          placeholder="Task Title*"
-          value={task.title}
-          onChange={(e) => setTask({ ...task, title: e.target.value })}
-        />
+          <form onSubmit={submit}>
+            <input
+              placeholder="Task Title*"
+              value={task.title}
+              onChange={(e) => setTask({ ...task, title: e.target.value })}
+            />
 
-        <textarea
-          placeholder="Description"
-          value={task.description}
-          onChange={(e) =>
-            setTask({ ...task, description: e.target.value })
-          }
-        />
+            <textarea
+              placeholder="Description"
+              value={task.description}
+              onChange={(e) =>
+                setTask({ ...task, description: e.target.value })
+              }
+            />
 
-        <select
-          value={task.priority}
-          onChange={(e) =>
-            setTask({ ...task, priority: e.target.value })
-          }
-        >
-          <option>Low</option>
-          <option>Medium</option>
-          <option>High</option>
-        </select>
+            <select
+              value={task.priority}
+              onChange={(e) =>
+                setTask({ ...task, priority: e.target.value })
+              }
+            >
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
 
-        <input
-          type="date"
-          value={task.dueDate}
-          onChange={(e) =>
-            setTask({ ...task, dueDate: e.target.value })
-          }
-        />
+            <input
+              type="date"
+              value={task.dueDate}
+              onChange={(e) =>
+                setTask({ ...task, dueDate: e.target.value })
+              }
+            />
 
-        <button disabled={!isValid}> {loading ? 'saving...' : 'Save Task'}</button>
-      </form>
+            <button disabled={!isValid}> {loading ? 'saving...' : 'Save Task'}</button>
+          </form>
+        </div>
     </div>
   );
 }
